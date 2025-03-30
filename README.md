@@ -17,14 +17,19 @@ Ein Python-Tool zur automatischen Verarbeitung und Aufteilung großer Dokumente.
 
 1. Repository klonen:
 ```bash
-git clone https://github.com/yourusername/document-slicer.git
-cd document-slicer
+git clone https://github.com/mariusschermann/slicer.git
+cd slicer
 ```
 
 2. Virtuelle Umgebung erstellen und aktivieren:
 ```bash
+# Unter macOS/Linux:
 python -m venv .venv
-source .venv/bin/activate  # Unter Windows: .venv\Scripts\activate
+source .venv/bin/activate
+
+# Unter Windows:
+python -m venv .venv
+.venv\Scripts\activate
 ```
 
 3. Abhängigkeiten installieren:
@@ -39,7 +44,7 @@ Die wichtigsten Einstellungen können in der `document_processor.py` angepasst w
 ```python
 SIZE_THRESHOLD = 15 * 1024 * 1024  # 15 MB in bytes
 CHAR_THRESHOLD = 60000
-WATCH_DIRECTORY = "/path/to/your/directory"
+WATCH_DIRECTORY = "/path/to/your/directory"  # Hier Ihren Pfad eintragen
 ```
 
 ## Verwendung
@@ -66,6 +71,22 @@ python document_processor.py
 - Microsoft Word (für DOCX zu PDF Konvertierung)
 - Die in `requirements.txt` aufgelisteten Python-Pakete
 
+## Fehlerbehebung
+
+### Häufige Probleme
+
+1. **PDF-Konvertierung funktioniert nicht**
+   - Stellen Sie sicher, dass Microsoft Word installiert ist
+   - Überprüfen Sie die Berechtigungen des überwachten Verzeichnisses
+
+2. **Script startet nicht**
+   - Überprüfen Sie, ob die virtuelle Umgebung aktiviert ist
+   - Stellen Sie sicher, dass alle Abhängigkeiten installiert sind
+
+3. **Keine Dateien werden verarbeitet**
+   - Überprüfen Sie den `WATCH_DIRECTORY` Pfad
+   - Stellen Sie sicher, dass die Dateien die Schwellenwerte überschreiten
+
 ## Lizenz
 
 MIT License - siehe [LICENSE](LICENSE) Datei für Details.
@@ -74,7 +95,14 @@ MIT License - siehe [LICENSE](LICENSE) Datei für Details.
 
 Beiträge sind willkommen! Bitte:
 1. Forken Sie das Repository
-2. Erstellen Sie einen Feature-Branch
-3. Committen Sie Ihre Änderungen
-4. Pushen Sie den Branch
-5. Erstellen Sie einen Pull Request 
+2. Erstellen Sie einen Feature-Branch (`git checkout -b feature/AmazingFeature`)
+3. Committen Sie Ihre Änderungen (`git commit -m 'Add some AmazingFeature'`)
+4. Pushen Sie den Branch (`git push origin feature/AmazingFeature`)
+5. Erstellen Sie einen Pull Request
+
+## Support
+
+Bei Fragen oder Problemen:
+1. Öffnen Sie ein Issue im GitHub Repository
+2. Beschreiben Sie das Problem detailliert
+3. Fügen Sie ggf. Logs oder Screenshots hinzu 
